@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fazil P S — Strategy Consultant</title>
+<meta name="description" content="Fazil P S — strategy consultant. A selection of work across growth strategy, operating model design, supply chain resilience, process transformation and financial modeling in the Middle East and India." />
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#F4F6F9;
+  --navy:#13294B; --navy-2:#1F3A63; --steel:#2E6BB0; --steel-deep:#235690;
+  --ink:#27313D; --muted:#5C6B7A; --line:#E2E7EE;
+  --maxw:1180px; --pad:clamp(20px,5vw,72px);
+  --sans:Calibri,"Segoe UI",Candara,"Trebuchet MS",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700;color:var(--navy)}
+.display{font-weight:800;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:1.0;letter-spacing:-.02em;color:var(--navy)}
+.display em{display:block;font-style:normal;color:var(--steel)}
+.display.sm{font-size:clamp(2rem,4vw,3.1rem);line-height:1.04}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:14px var(--pad);background:rgba(255,255,255,.82);backdrop-filter:blur(10px);
+  box-shadow:0 1px 0 rgba(226,231,238,.0);transition:box-shadow .35s,padding .35s,background .35s}
+.nav.scrolled{box-shadow:0 1px 0 var(--line);background:rgba(255,255,255,.92);padding:10px var(--pad)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.12em;font-size:.84rem;color:var(--navy)}
+.brand-mark{display:inline-block;width:10px;height:10px;background:var(--steel);transform:rotate(45deg)}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,28px)}
+.nav-links a{font-size:.84rem;font-weight:600;color:var(--navy-2);position:relative;transition:color .2s}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--steel);transition:width .3s}
+.nav-links a:not(.nav-cta):hover,.nav-links a.active:not(.nav-cta){color:var(--navy)}
+.nav-links a:not(.nav-cta):hover::after,.nav-links a.active:not(.nav-cta)::after{width:100%}
+.nav-cta{border:1.5px solid var(--navy);border-radius:999px;padding:8px 18px;color:var(--navy);transition:.25s}
+.nav-cta:hover{background:var(--navy);color:#fff}
+.nav-toggle{display:none;background:none;border:none;font-size:1.7rem;color:var(--navy);cursor:pointer;line-height:1}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-block;font-weight:700;font-size:.92rem;padding:14px 26px;border-radius:4px;transition:transform .2s,background .25s,color .25s,border-color .25s;cursor:pointer}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--steel-deep);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-ghost:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+
+/* ---------- IMAGE PANELS (full-screen photo, blurred behind text) ---------- */
+.panel{position:relative;min-height:96vh;display:flex;align-items:center;overflow:hidden;color:#fff;background-size:cover;background-repeat:no-repeat;background-position:var(--pos,center)}
+.panel.hero{min-height:100vh}
+.panel::before{content:"";position:absolute;inset:0;z-index:0;background-image:inherit;background-size:cover;background-repeat:no-repeat;background-position:var(--pos,center);filter:blur(20px) brightness(.46) saturate(1.1);transform:scale(1.16)}
+.panel.left::before{-webkit-mask-image:linear-gradient(to right,#000 0%,#000 40%,transparent 72%);mask-image:linear-gradient(to right,#000 0%,#000 40%,transparent 72%)}
+.panel.right::before{-webkit-mask-image:linear-gradient(to left,#000 0%,#000 40%,transparent 72%);mask-image:linear-gradient(to left,#000 0%,#000 40%,transparent 72%)}
+.panel-text{position:relative;z-index:3;width:min(46%,580px);display:flex;flex-direction:column;gap:18px;padding:clamp(40px,5.5vw,90px);padding-top:max(96px,9vh)}
+.panel.right .panel-text{margin-left:auto}
+.panel.left .panel-text{background:linear-gradient(to right,rgba(11,21,38,.84),rgba(11,21,38,.46) 62%,transparent)}
+.panel.right .panel-text{background:linear-gradient(to left,rgba(11,21,38,.84),rgba(11,21,38,.46) 62%,transparent)}
+.panel-text{text-shadow:0 1px 16px rgba(8,15,28,.35)}
+.panel-text>*{max-width:520px}
+.panel .sec-num,.panel .kicker,.cred i,.tl .w,.edu .r~.r,.sub-label{color:#9DC2EA}
+.panel .display{color:#fff}
+.panel .display em{color:#9DC2EA}
+.kicker{font-size:.82rem;letter-spacing:.28em;text-transform:uppercase;color:#9DC2EA;font-weight:700}
+.panel .sec-num{font-size:1rem;font-weight:700}
+.sub{font-size:1.1rem;color:rgba(255,255,255,.9)}
+.panel p{color:rgba(255,255,255,.88)}
+.panel strong{color:#fff}
+.cred{display:flex;flex-wrap:wrap;gap:8px 10px;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:700;margin-top:6px}
+.cred i{font-style:normal}
+.lead{font-weight:700;font-size:clamp(1.2rem,2.2vw,1.62rem);line-height:1.34;color:#fff}
+.panel .btn-primary{background:#fff;color:var(--navy)}
+.panel .btn-primary:hover{background:#9DC2EA;color:var(--navy);transform:translateY(-2px)}
+.panel .btn-ghost{border-color:rgba(255,255,255,.7);color:#fff}
+.panel .btn-ghost:hover{background:#fff;color:var(--navy);transform:translateY(-2px)}
+
+/* compact timeline (inside panel) */
+.tl{padding:16px 0;border-top:1px solid rgba(255,255,255,.22)}
+.tl:first-child{border-top:none;padding-top:0}
+.tl .w{font-weight:700;font-size:.85rem;color:#9DC2EA}
+.tl h3{font-size:1.1rem;color:#fff;font-weight:800;margin-top:2px}
+.tl .r{color:rgba(255,255,255,.85);font-weight:600;font-size:.92rem;margin:2px 0}
+.tl p{color:rgba(255,255,255,.7);font-size:.9rem}
+
+/* education + leadership (inside panel) */
+.edu{border-left:3px solid #9DC2EA;padding-left:18px;margin-bottom:20px}
+.edu h3{font-size:1.2rem;color:#fff;font-weight:800}
+.edu .r{color:rgba(255,255,255,.85);font-weight:600;font-size:.92rem;margin:3px 0}
+.edu p{color:rgba(255,255,255,.82);font-size:.92rem}
+.sub-label{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;display:block}
+.li{border-left:3px solid rgba(157,194,234,.55);padding-left:18px;margin-bottom:13px;transition:transform .25s,border-color .25s}
+.li:hover{transform:translateX(6px);border-left-color:#fff}
+.li h4{font-size:1rem;color:#fff;font-weight:800}
+.li p{color:rgba(255,255,255,.8);font-size:.9rem}
+
+/* ---------- STANDARD SECTIONS ---------- */
+.section{max-width:var(--maxw);margin:0 auto;padding:96px var(--pad)}
+.section.soft{max-width:none;background:var(--bg-soft)}
+.section.soft .section-head,.section.soft .exp-grid{max-width:var(--maxw);margin-left:auto;margin-right:auto}
+.section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:44px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.sec-num{font-size:1rem;color:var(--steel);font-weight:700;display:inline-block;transition:transform .3s}
+.section-head:hover .sec-num{transform:translateY(-2px)}
+.section-head h2{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.01em;color:var(--navy)}
+.sec-intro{font-size:1.05rem;color:var(--ink);max-width:62ch;margin:-24px 0 38px}
+.muted{color:var(--muted)}
+
+/* cases */
+.cases{display:flex;flex-direction:column}
+.case{display:grid;grid-template-columns:110px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--line);transition:padding-left .3s,background .3s}
+.case:last-child{border-bottom:1px solid var(--line)}
+.case:hover{padding-left:10px;background:linear-gradient(90deg,var(--bg-soft),transparent)}
+.case-index{font-size:2.6rem;color:var(--line);font-weight:800;line-height:1;transition:color .3s}
+.case:hover .case-index{color:var(--steel)}
+.case-main h3{font-weight:800;font-size:1.4rem;color:var(--navy);display:inline-flex;align-items:center;gap:.5ch}
+.case-main h3::after{content:"\2192";color:var(--steel);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s;font-weight:700}
+.case:hover .case-main h3::after{opacity:1;transform:none}
+.case-client{color:var(--steel-deep);font-weight:700;font-size:.85rem;letter-spacing:.03em;margin:6px 0 18px}
+.case dl{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:7px}
+.case dd{color:var(--ink);font-size:.95rem}
+
+/* expertise */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.exp-card{border:1px solid var(--line);background:#fff;padding:30px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.exp-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(19,41,75,.4);border-color:var(--steel)}
+.exp-card h3{font-weight:800;font-size:1.2rem;color:var(--navy);margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.exp-card ul{list-style:none;columns:2;column-gap:24px}
+.exp-card li{font-size:.92rem;color:var(--ink);padding:5px 0 5px 16px;position:relative;break-inside:avoid}
+.exp-card li::before{content:"\203A";position:absolute;left:0;color:var(--steel);font-weight:800}
+
+/* writing */
+.posts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.post{border:1px solid var(--line);background:#fff;padding:28px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.post:hover{transform:translateY(-4px);box-shadow:0 22px 44px -28px rgba(19,41,75,.45);border-color:var(--steel)}
+.post-cat{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-deep);font-weight:800}
+.post h3{font-weight:800;font-size:1.2rem;line-height:1.25;color:var(--navy)}
+.post p{color:var(--ink);font-size:.95rem;flex-grow:1}
+.post-link{font-weight:700;font-size:.9rem;color:var(--navy);transition:color .2s,transform .2s}
+.post:hover .post-link{color:var(--steel-deep);transform:translateX(4px)}
+
+/* ---------- FOOTER ---------- */
+.footer{max-width:var(--maxw);margin:0 auto;padding:28px var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line)}
+
+/* ---------- INTERACTIONS ---------- */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--steel),var(--navy));z-index:60;transition:width .1s linear}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.panel-text.reveal{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:var(--navy);flex-direction:column;align-items:flex-start;justify-content:center;gap:22px;padding:40px;transform:translateX(100%);transition:transform .4s;box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+  .nav-links.open{transform:none}
+  .nav-links a{color:#fff;font-size:1.1rem}
+  .nav-cta{border-color:#fff;color:#fff}
+  .nav-toggle{display:block;z-index:60}
+  .nav.menu-open .nav-toggle{color:#fff}
+  .panel,.panel.hero{min-height:82vh;align-items:flex-end}
+  .panel::before{-webkit-mask-image:none!important;mask-image:none!important;filter:brightness(.5) saturate(1.05);transform:scale(1.05)}
+  .panel::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(11,21,38,.92),rgba(11,21,38,.35) 60%,transparent)}
+  .panel-text{width:100%;margin:0!important;padding:36px var(--pad) 48px;background:none!important;text-shadow:0 1px 18px rgba(8,15,28,.55)}
+  .panel-text>*{max-width:none}
+  .case{grid-template-columns:1fr;gap:14px}
+  .case-index{font-size:2rem}
+  .case dl{grid-template-columns:1fr;gap:16px}
+  .exp-grid,.posts{grid-template-columns:1fr}
+}
+@media(max-width:460px){.exp-card ul{columns:1}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.panel:hover .bg img{transform:none}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="progress"></div>
+
+<!-- ======== NAV ======== -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Home"><span class="brand-mark"></span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#writing">Writing</a>
+    <a href="#contact" class="nav-cta">Connect</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">≡</button>
+</header>
+
+<main>
+
+<!-- ======== HERO ======== -->
+<section class="panel left hero" id="top" style="--pos:100% 30%;background-image:url('images/hero-portrait.png')" role="img" aria-label="Fazil P S">
+  <div class="panel-text reveal">
+    <h1 class="display">Fazil P S</h1>
+    <p class="sub">Strategy consultant with experience in delivering <strong>growth strategy</strong>, <strong>financial modeling</strong>, <strong>process transformation</strong> and <strong>AI initiatives</strong> across the <strong>Middle East</strong> and <strong>India</strong>.</p>
+    <div class="cta">
+      <a href="#work" class="btn btn-primary">View My Work</a>
+      <a href="resume.pdf" class="btn btn-ghost">Download Resume</a>
+    </div>
+    <div class="cred"><span>Arthur D. Little</span><i>/</i><span>IIT Madras</span><i>/</i><span>LinkedIn Top Strategy Voice</span><i>/</i><span>GCC Strategy Projects</span></div>
+  </div>
+</section>
+
+<!-- ======== ABOUT ======== -->
+<section class="panel right about" id="about" style="--pos:0% 30%;background-image:url('images/environment.png')" role="img" aria-label="Fazil P S in the city">
+  <div class="panel-text reveal">
+    <span class="sec-num">01</span>
+    <h2 class="display sm">About</h2>
+    <p class="lead">My work sits at the intersection of structured problem-solving, data-backed decision-making, and stakeholder alignment.</p>
+    <p>I am a strategy consultant at Arthur D. Little. Across the Middle East and India, I worked on growth strategy, operating model transformation, supply chain resilience, process redesign, and financial modeling.</p>
+    <p>I supported public and private sector organizations on initiatives ranging from revenue diversification and growth strategy to organizational redesign and corporate process transformation. I graduated from IIT Madras and also worked across AI research, analytics, student consulting, and social entrepreneurship.</p>
+  </div>
+</section>
+
+<!-- ======== WORK ======== -->
+<section class="section work" id="work">
+  <div class="section-head reveal"><span class="sec-num">02</span><h2>Selected work</h2></div>
+  <div class="cases">
+    <article class="case reveal">
+      <div class="case-index">01</div>
+      <div class="case-main">
+        <h3>Growth Strategy &amp; Revenue Diversification</h3>
+        <p class="case-client">GCC infrastructure regulator</p>
+        <dl>
+          <div><dt>Challenge</dt><dd>Identify new services and diversify revenue streams.</dd></div>
+          <div><dt>Approach</dt><dd>Market assessment, business model design, pricing strategy, financial modeling, implementation roadmap.</dd></div>
+          <div><dt>Impact</dt><dd>Identified 9 new revenue services; built the financial model &amp; pricing (~$40M revenue, ~$10M profit over 5 years) and the enablers, policies and phased roadmap to activate them.</dd></div>
+        </dl>
+      </div>
+    </article>
+    <article class="case reveal">
+      <div class="case-index">02</div>
+      <div class="case-main">
+        <h3>Supply Chain Resilience &amp; Rerouting Model</h3>
+        <p class="case-client">GCC Ministry of Transport</p>
+        <dl>
+          <div><dt>Challenge</dt><dd>Build a transportation (Maritime & aviation) resilience model following the Strait of Hormuz disruption scenario.</dd></div>
+          <div><dt>Approach</dt><dd>Decision-support model recommending optimal vessel rerouting ports by cost and time; end-to-end maritime logistics cost & time dashboard across scenarios.</dd></div>
+          <div><dt>Impact</dt><dd>Maritime &amp; aviation resilience model to guide rerouting decisions after the Strait of Hormuz crisis.</dd></div>
+        </dl>
+      </div>
+    </article>
+    <article class="case reveal">
+      <div class="case-index">03</div>
+      <div class="case-main">
+        <h3>Operating Model &amp; Process Transformation</h3>
+        <p class="case-client">Global real estate player, Abu Dhabi (UAE)</p>
+        <dl>
+          <div><dt>Challenge</dt><dd>Improve corporate processes and policies.</dd></div>
+          <div><dt>Approach</dt><dd>Departmental workshops, process improvement, SOP design, policy development.</dd></div>
+          <div><dt>Impact</dt><dd>Defined ~200 processes &amp; SOPs across 10 departments and ~30 corporate policies; secured executive buy-in across 20+ senior leadership discussions.</dd></div>
+        </dl>
+      </div>
+    </article>
+    <article class="case reveal">
+      <div class="case-index">04</div>
+      <div class="case-main">
+        <h3>Organizational Redesign</h3>
+        <p class="case-client">Aviation MRO company</p>
+        <dl>
+          <div><dt>Challenge</dt><dd>Design a future-fit organization for growth and productivity.</dd></div>
+          <div><dt>Approach</dt><dd>Org structure review, headcount planning, role design, automation opportunity assessment.</dd></div>
+          <div><dt>Impact</dt><dd>Identified 13 new roles and planned a scale-up from 944 to ~1,870 FTEs (~17% efficiency) to support 3× revenue by 2030; 35 automation use cases worth ~$2–3M one-time savings.</dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======== EXPERTISE ======== -->
+<section class="section soft expertise" id="expertise">
+  <div class="section-head reveal"><span class="sec-num">03</span><h2>Expertise</h2></div>
+  <div class="exp-grid">
+    <div class="exp-card reveal"><h3>Strategy &amp; Growth</h3><ul><li>Corporate strategy</li><li>Growth strategy</li><li>Business model development</li><li>Market research</li><li>Revenue diversification</li><li>Financial modeling</li></ul></div>
+    <div class="exp-card reveal"><h3>Transformation &amp; Operations</h3><ul><li>Operating model design</li><li>Process improvement</li><li>SOP development</li><li>Policy design</li><li>Organizational redesign</li><li>Headcount planning</li></ul></div>
+    <div class="exp-card reveal"><h3>Analytics &amp; Decision Support</h3><ul><li>Excel modeling</li><li>Dashboard development</li><li>SQL</li><li>Python</li><li>Data analysis</li><li>AI / Machine learning</li></ul></div>
+    <div class="exp-card reveal"><h3>Stakeholder &amp; Execution</h3><ul><li>Executive presentations</li><li>Stakeholder management</li><li>Leadership workshops</li><li>Implementation roadmaps</li><li>Project management</li></ul></div>
+  </div>
+</section>
+
+<!-- ======== EXPERIENCE ======== -->
+<section class="panel right experience" id="experience" style="--pos:0% 32%;background-image:url('images/work-mode.png')" role="img" aria-label="Fazil P S at work">
+  <div class="panel-text reveal">
+    <span class="sec-num">04</span>
+    <h2 class="display sm">Experience</h2>
+    <div class="tl"><div class="w">Nov 2023 – Present</div><h3>Arthur D. Little</h3><div class="r">Senior Business Analyst — Management Consulting (Middle East &amp; India)</div><p>Consistently rated Top Performer across the last three review cycles.</p></div>
+    <div class="tl"><div class="w">Jul 2022 – Nov 2022</div><h3>Technical University of Munich</h3><div class="r">AI Research Intern</div><p>Built an NLP model predicting compound structures from XAFS data (63% accuracy); +50% performance via PCA dimensionality reduction.</p></div>
+    <div class="tl"><div class="w">May 2022 – Jul 2022</div><h3>Info Edge India Ltd.</h3><div class="r">Data Science Intern</div><p>NLP-based multi-label classification to predict question tags on a recruitment platform; clustered 31 tag segments (KMeans, GMM, DBSCAN) via silhouette scores, improving job-model runtime efficiency by 25%.</p></div>
+    <div class="tl"><div class="w">Dec 2021 – Jan 2022</div><h3>Paymate</h3><div class="r">Data Analytics Intern</div><p>Time-series ML models forecasting transaction volume, revenue and profit; helped build a real-time KPI dashboard.</p></div>
+  </div>
+</section>
+
+<!-- ======== EDUCATION & LEADERSHIP ======== -->
+<section class="panel left education" id="education" style="--pos:100% 30%;background-image:url('images/speaking.png')" role="img" aria-label="Fazil P S presenting">
+  <div class="panel-text reveal">
+    <span class="sec-num">05</span>
+    <h2 class="display sm">Education &amp; leadership</h2>
+    <div class="edu">
+      <h3>Indian Institute of Technology (IIT) Madras</h3>
+      <div class="r">B.Tech in Engineering · Jun 2019 – Jul 2023</div>
+      <p>LinkedIn Top Strategy Voice (2024) · one of 12 Dean's Ambassadors · Top 10 Honda Y-E-S semi-finalist (500+ applicants).</p>
+    </div>
+    <span class="sub-label">Leadership &amp; initiatives at IIT Madras</span>
+    <div class="li"><h4>Co-Founder — Tensors</h4><p>Social enterprise mentoring JEE aspirants; led a 38-member, 3-tier team across 5 products, impacting 5,000+ aspirants; raised ₹2.5L+ via a 2,000+ participant mock test.</p></div>
+    <div class="li"><h4>Director of Consulting Operations — 180 Degrees Consulting</h4><p>Led 20+ student consultants across 8 projects; organized the first-ever Social Impact Conclave (8+ speakers, 200+ attendees).</p></div>
+    <div class="li"><h4>Administrator — G20 India</h4><p>Coordinated the G20 1st Education Working Group at IIT Madras — crowd management with Chennai Police, MoE &amp; MEA for 1,000+ attendees; hosted 60+ delegates from 18 countries.</p></div>
+  </div>
+</section>
+
+<!-- ======== WRITING ======== -->
+<section class="section writing" id="writing">
+  <div class="section-head reveal"><span class="sec-num">06</span><h2>Ideas &amp; writing</h2></div>
+  <p class="sec-intro reveal">Notes on strategy, consulting, transformation, AI &amp; analytics, and emerging markets. <span class="muted">50K+ impressions across LinkedIn &amp; Medium.</span></p>
+  <div class="posts">
+    <a class="post reveal" href="https://medium.com/@fasilfiroz76/gamblers-fallacy-how-it-deceives-us-in-our-day-to-day-lives-80ec258592fe" target="_blank" rel="noopener"><span class="post-cat">Behavioral Bias</span><h3>Gambler's Fallacy: how it deceives us in day-to-day life</h3><p>Why we misread randomness — and the costly bets that follow.</p><span class="post-link">Read on Medium →</span></a>
+    <a class="post reveal" href="https://medium.com/@fasilfiroz76/halo-effect-its-examples-in-our-day-to-day-life-29967d77edda" target="_blank" rel="noopener"><span class="post-cat">Psychology</span><h3>The Halo Effect and its examples in everyday life</h3><p>How a single good impression quietly colors everything else we judge.</p><span class="post-link">Read on Medium →</span></a>
+    <a class="post reveal" href="https://medium.com/@fasilfiroz76/examples-of-social-proof-in-digital-marketing-15af6690961e" target="_blank" rel="noopener"><span class="post-cat">Marketing</span><h3>Examples of social proof in digital marketing</h3><p>The signals that make people trust — and buy — online.</p><span class="post-link">Read on Medium →</span></a>
+    <a class="post reveal" href="https://medium.com/@fasilfiroz76/frequency-illusion-or-baader-meinhof-effect-in-marketing-8b1d5f4943fd" target="_blank" rel="noopener"><span class="post-cat">Marketing &amp; Psychology</span><h3>Frequency Illusion (Baader-Meinhof effect) in marketing</h3><p>Why a brand suddenly seems everywhere once you've noticed it.</p><span class="post-link">Read on Medium →</span></a>
+  </div>
+</section>
+
+<!-- ======== CONTACT ======== -->
+<section class="panel right contact" id="contact" style="--pos:0% 32%;background-image:url('images/casual.png')" role="img" aria-label="Fazil P S">
+  <div class="panel-text reveal">
+    <span class="sec-num">07</span>
+    <h2 class="display sm">Get in touch</h2>
+    <p class="sub">Please use any of the contact methods below to get in touch with me</p>
+    <div class="cta">
+      <a href="mailto:fasilfiroz76@gmail.com" class="btn btn-primary">Email me</a>
+      <a href="https://www.linkedin.com/in/fazil-p-s-2a0bb41a0/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <a href="resume.pdf" class="btn btn-ghost">Download Resume</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Fazil P S. All rights reserved.</span>
+  <span>Strategy Consultant · Middle East &amp; India</span>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var nav = document.getElementById('nav');
+function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 40); }
+onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+var toggle = document.getElementById('navToggle');
+var links = document.getElementById('navLinks');
+toggle.addEventListener('click', function(){
+  var open = links.classList.toggle('open');
+  nav.classList.toggle('menu-open', open);
+  toggle.textContent = open ? '×' : '≡';
+});
+Array.prototype.forEach.call(links.querySelectorAll('a'), function(a){
+  a.addEventListener('click', function(){ links.classList.remove('open'); nav.classList.remove('menu-open'); toggle.textContent = '≡'; });
+});
+
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function(el, i){
+  el.style.transitionDelay = (i % 5) * 70 + 'ms'; io.observe(el);
+});
+
+var progress = document.getElementById('progress');
+function updateProgress(){
+  var h = document.documentElement;
+  progress.style.width = Math.max(0, Math.min(1, h.scrollTop / (h.scrollHeight - h.clientHeight))) * 100 + '%';
+}
+updateProgress(); window.addEventListener('scroll', updateProgress, { passive:true });
+
+var navAnchors = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+var sections = navAnchors.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+var spy = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ var id='#'+e.target.id; navAnchors.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')===id); }); }
+  });
+}, { rootMargin:'-45% 0px -50% 0px' });
+sections.forEach(function(s){ spy.observe(s); });
+</script>
+</body>
+</html>
